@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import "react-toggle/style.css" 
 import { useStore } from 'react-redux';
 import { useRouter } from 'next/router';
 import 'slick-carousel/slick/slick.css';
@@ -35,7 +36,7 @@ const WrappedApp = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@300;400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Caveat&family=Montserrat:wght@300;400;500&display=swap"
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

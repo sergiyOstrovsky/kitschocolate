@@ -46,14 +46,14 @@ const PricesSlider = ({ mt, list, router, categoryName, categoryTitle }) => {
         </Flex>
       </Flex>
       <Slider ref={slider} {...priceSettings}>
-        {list.map(({ id, price, title, imageUrl }, index) => (
+        {list.map(({ id, price, title, imgUrl }, index) => (
           <Box
             px={20}
             key={index}
             cursor="pointer"
             onClick={() => handleGoToDetailPage(id)}
           >
-            <Img width="100%" height="100%" src={imageUrl} maxHeight={400} />
+            <Img width="100%" height="100%" src={imgUrl} maxHeight={400} />
             <Box mx="auto" mt={40} width="90%">
               <Text
                 fontSize={18}

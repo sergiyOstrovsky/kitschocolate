@@ -23,14 +23,7 @@ const Content = ({ data }) => {
         borderBottom="2px solid"
         borderColor={Theme.colors.quincy}
       >
-        <PageTitle
-          fontSize={45}
-          textAlign="center"
-          fontFamily="Caveat"
-          color={Theme.colors.congoBrown}
-        >
-          Магазин / {title}
-        </PageTitle>
+        <PageTitle {...Theme.styles.pageTitle}>Магазин / {title}</PageTitle>
         <Flex mt={50} justifyContent="space-between">
           <OrderImage extraImages={extraImages} />
           <OrderItem orderItem={data} />
