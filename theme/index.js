@@ -36,6 +36,12 @@ export default {
       fontWeight: 'bold',
       fontFamily: 'Poppins',
       color: colors.mainBlack
+    },
+    actionButton: {
+      fontSize: 14,
+      fontWeight: 500,
+      color: colors.white,
+      background: colors.mediumWood
     }
   }
 };
