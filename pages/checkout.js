@@ -1,4 +1,3 @@
-import { useState } from 'react';
 // components
 import Layout from '../components/layout';
 // forms
@@ -9,21 +8,20 @@ import Theme from '../theme';
 import { Section, PageTitle } from '../ui';
 // ////////////////////////////////////////////////
 
-const OrderPage = ({ router }) => {
-  const [loading, setLoading] = useState(true);
-  setTimeout(() => {
-    setLoading(false);
-  }, 500);
-  return (
-    <Layout router={router} loading={loading} title="Оформлення замовлення">
-      <Section py={50} maxWidth={1100}>
-        <PageTitle {...Theme.styles.pageTitle} mb={50}>
-          Оформлення замовлення
-        </PageTitle>
-        <OrderForm />
-      </Section>
-    </Layout>
-  );
-};
+const CheckoutPage = ({ router, firebaseData }) => (
+  <Layout
+    router={router}
+    firebaseData={firebaseData}
+    collections={['chocolates']}
+    title="Оформлення замовлення"
+  >
+    <Section py={50} maxWidth={1100}>
+      <PageTitle {...Theme.styles.pageTitle} mb={50}>
+        Оформлення замовлення
+      </PageTitle>
+      <OrderForm />
+    </Section>
+  </Layout>
+);
 
-export default OrderPage;
+export default CheckoutPage;

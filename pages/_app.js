@@ -1,10 +1,11 @@
-import React from 'react';
+import * as R from 'ramda';
 import Head from 'next/head';
-import "react-toggle/style.css" 
-import { useStore } from 'react-redux';
+import 'react-toggle/style.css';
 import { useRouter } from 'next/router';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { useStore, useSelector } from 'react-redux';
 import { createFirestoreInstance } from 'redux-firestore';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 // firebase
@@ -29,20 +30,26 @@ const WrappedApp = ({ Component, pageProps }) => {
     createFirestoreInstance,
     dispatch: store.dispatch
   };
+  const firebaseData = useSelector(
+    R.compose(
+      R.pick(['data', 'requested']),
+      R.pathOr({}, ['firebase'])
+    )
+  );
 
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Caveat&family=Montserrat:wght@300;400;500&display=swap"
         />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <GlobalStyles />
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <Component {...pageProps} router={router} />
+        <Component {...pageProps} router={router} firebaseData={firebaseData} />
       </ReactReduxFirebaseProvider>
     </>
   );
