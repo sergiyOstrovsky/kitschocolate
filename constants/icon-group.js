@@ -10,13 +10,13 @@ export const ICON_GROUP_SOCIALS = [
   {
     icon: 'instagram',
     link: 'https://www.instagram.com/'
-  },
-  {
-    icon: 'ln',
-    link: 'https://www.linkedin.com/'
-  },
-  {
-    icon: 'youTube',
-    link: 'https://www.youtube.com/'
   }
+  // {
+  //   icon: 'ln',
+  //   link: 'https://www.linkedin.com/'
+  // },
+  // {
+  //   icon: 'youTube',
+  //   link: 'https://www.youtube.com/'
+  // }
 ];

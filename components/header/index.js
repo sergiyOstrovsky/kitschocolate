@@ -84,7 +84,6 @@ const Header = ({ router, activeNavItem, handleGoToHomePage }) => (
       justifyContent="space-between"
       borderColor={Theme.colors.lighterGrey}
     >
-      <Icon iconName="logo" handleClick={handleGoToHomePage} />
       <Flex>
         {C.ICON_GROUP_SOCIALS.map(({ icon, link }, index) => (
           <StyledLink mr={30} key={index} href={link} target="_blank">
@@ -92,6 +91,7 @@ const Header = ({ router, activeNavItem, handleGoToHomePage }) => (
           </StyledLink>
         ))}
       </Flex>
+      <Icon iconName="logo" handleClick={handleGoToHomePage} />
       <BasketIcon router={router} />
     </Flex>
     <Nav
