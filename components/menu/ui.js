@@ -15,10 +15,10 @@ import Theme from '../../theme';
 import { StyledLink } from '../../ui';
 // //////////////////////////////////////////////////
 
-export const ModalWrapper = styled.div`
-  top: 0;
+export const MenuWrapper = styled.div`
   left: 0;
   right: 0;
+  top: 84px;
   bottom: 0;
   width: 100vw;
   height: 100vh;

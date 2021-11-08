@@ -5,6 +5,7 @@ import {
   right,
   space,
   width,
+  color,
   order,
   bottom,
   height,
@@ -12,11 +13,14 @@ import {
   display,
   opacity,
   minWidth,
+  fontSize,
   maxWidth,
   overflowY,
   maxHeight,
+  boxShadow,
   borderTop,
   borderLeft,
+  fontWeight,
   background,
   borderColor,
   borderRight,
@@ -29,15 +33,19 @@ export const Box = styled.div`
   ${space}
   ${width}
   ${order}
+  ${color}
   ${height}
   ${border}
   ${opacity}
   ${display}
   ${minWidth}
   ${maxWidth}
+  ${fontSize}
+  ${boxShadow}
   ${overflowY}
   ${maxHeight}
   ${borderTop}
+  ${fontWeight}
   ${background}
   ${borderLeft}
   ${borderRight}
@@ -56,4 +64,26 @@ export const RelativeBox = styled(Box)`
   ${bottom}
 
   position: relative;
+`;
+
+export const FixedBox = styled.div`
+  ${top}
+  ${left}
+  ${right}
+  ${space}
+  ${width}
+  ${bottom}
+
+  position: fixed;
+`;
+
+export const AbsoluteBox = styled.div`
+  ${top}
+  ${left}
+  ${right}
+  ${space}
+  ${width}
+  ${bottom}
+
+  position: absolute;
 `;
